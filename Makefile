@@ -1,13 +1,19 @@
-.PHONY: dev dev-lan emulator-android
+.PHONY: dev dev-lan dev-android emulator-android stop-expo
 
-dev:
+stop-expo:
+	adb shell am force-stop host.exp.exponent
+
+dev: stop-expo
+	bun generate:css
 	bun start --clear
+
+dev-android: stop-expo
+	bun generate:css
+	bun android --clear
 
 dev-lan:
 	REACT_NATIVE_PACKAGER_HOSTNAME=10.42.0.1 bun start --lan --clear
 
-stop-expo:
-	adb shell am force-stop host.exp.exponent
 
 emulator-android:
 	adb kill-server
