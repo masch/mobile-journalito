@@ -4,11 +4,9 @@ stop-expo:
 	adb shell am force-stop host.exp.exponent
 
 dev: stop-expo
-	bun generate:css
 	bun start --clear
 
 dev-android: stop-expo
-	bun generate:css
 	bun android --clear
 
 dev-lan:

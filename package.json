@@ -12,6 +12,7 @@
     "generate:css": "tamagui build"
   },
   "dependencies": {
+    "@clerk/clerk-expo": "^2.19.14",
     "@expo/vector-icons": "^15.0.3",
     "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/elements": "^2.6.3",
@@ -19,6 +20,7 @@
     "@tamagui/babel-plugin": "^1.142.0",
     "@tamagui/config": "^1.142.0",
     "@tamagui/font-inter": "^1.142.0",
+    "@tamagui/lucide-icons": "^1.142.0",
     "@tamagui/metro-plugin": "^1.142.0",
     "expo": "~54.0.30",
     "expo-constants": "~18.0.12",
@@ -27,6 +29,7 @@
     "expo-image": "~3.0.11",
     "expo-linking": "~8.0.11",
     "expo-router": "~6.0.21",
+    "expo-secure-store": "^15.0.8",
     "expo-splash-screen": "~31.0.13",
     "expo-status-bar": "~3.0.9",
     "expo-symbols": "~1.0.8",
@@ -50,5 +53,11 @@
     "eslint": "^9.25.0",
     "eslint-config-expo": "~10.0.0"
   },
-  "private": true
+  "private": true,
+  "trustedDependencies": [
+    "@clerk/shared",
+    "browser-tabs-lock",
+    "core-js",
+    "unrs-resolver"
+  ]
 }
