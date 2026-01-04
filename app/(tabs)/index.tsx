@@ -1,3 +1,4 @@
+
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
 
@@ -6,6 +7,7 @@ import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
+import { Button } from 'tamagui';
 
 export default function HomeScreen() {
   return (
@@ -18,7 +20,8 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">Welcome3aaaaa!</ThemedText>
+        <Button />
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
