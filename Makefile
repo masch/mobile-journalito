@@ -12,8 +12,21 @@ dev-android: stop-expo
 dev-lan:
 	REACT_NATIVE_PACKAGER_HOSTNAME=10.42.0.1 bun start --lan --clear
 
-
 emulator-android:
 	adb kill-server
 	adb start-server
 	emulator -avd Pixel_Dev -gpu host -dns-server 8.8.8.8 -no-snapshot-load &
+
+sanity-dev:
+	cd sanity && \
+	bun run dev
+
+sanity-deploy-schemas:
+	cd sanity && \
+	npx sanity schema deploy
+
+sanity-import-sample-data:
+	cd sanity && \
+	npx sanity dataset import ../sample_data/sample-categories.ndjson production --replace && \
+	npx sanity dataset import ../sample_data/sample-daily-prompts.ndjson production --replace && \
+	npx sanity dataset import ../sample_data/test-journal-entries.ndjson production --replace
